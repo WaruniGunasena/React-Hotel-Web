@@ -1,0 +1,168 @@
+.nav_wrapper{
+    height: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15%;
+    background-color: transparent;
+    position: fixed;
+    top: 0;
+    z-index: 99;
+}
+
+.nav_wrapper::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background:linear-gradient(0deg, transparent, #000) ;
+    z-index: -1;
+}
+
+.nav_wrapper .logo a{
+    font-size: 25px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.nav_wrapper .logo a span{
+    color: #df8033;
+}
+
+.nav_wrapper ul li{
+    display: inline-block;
+    margin: 0 15px;
+
+    position: relative;
+}
+
+.nav_wrapper ul li::after{
+    position: absolute;
+    content: "";
+    top: 10px;
+    left: -10%;
+    transform: translateX(-50%);
+    height: 5px;
+    width: 5px;
+    border-radius: 50%;
+    transition: .2s;
+    background-color: #fff;
+}
+
+.nav_wrapper ul li:hover:after{
+    background-color: #df8033;
+}
+
+.nav_btns {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.nav_wrapper ul li a{
+    color: #fff;
+    font-weight: 500;
+    font-family: 'poppins';
+    font-size: 15px;
+}
+
+.nav_btns button {
+    height: 45px;
+    width: 150px;
+    border: 1px solid #fff;
+    background-color: transparent;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.nav_btns button:hover {
+    border-color: #df8033;
+    color: #df8033;
+}
+
+.menu_icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+    border: none;
+    background-color: #cb5c00;
+    color: #fff;
+    border-radius: 50%;
+    box-shadow: 2px 2px 3px rgba(255, 255, 255, 0.58),
+        inset 3px 3px 10px rgba(255, 255, 255, 0.23);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.2rem;
+    line-height: 1;
+}
+
+.menu_icon:hover {
+    transform: scale(1.05);
+    background-color: #df8033;
+}
+
+.menu-icon i {
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hide_on_large {
+    display: none;
+}
+
+@media screen and (max-width:1200px) {
+    
+    #bars{
+        display: flex;
+    }
+
+    .hide_on_large {
+            display: flex;
+    }
+
+    .nav_wrapper ul {
+        position: absolute;
+        top: 100%;
+        left: -100%;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(8px);
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        border-bottom: 1px solid #fff;
+        transition: .6s;
+    }
+
+    .nav_wrapper ul li::after{
+        left: 10%;
+        top: 35px;
+    }
+
+    .nav_wrapper .showNav{
+        left: 0;
+    }
+
+    .nav_wrapper ul li{
+        display: flex;
+        margin: 5px 0;
+        padding: 25px 0;
+        padding-left: 15%;
+        border-bottom: 1px solid rgba(131, 131,131, 0.4);
+    }
+
+    .nav_wrapper ul li:last-child{
+        border: none;
+    }
+}
+
+
